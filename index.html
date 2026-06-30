@@ -3,87 +3,163 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ZYVRA</title>
+
+  <title>ZYVRA | Designed with intention</title>
+
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<header class="navbar">
-  <div class="logo">ZYVRA</div>
+  <header class="navbar">
+    <a href="#" class="logo">ZYVRA</a>
 
-  <nav>
-    <a href="#collections">Collections</a>
-    <a href="#studio">Studio</a>
-    <a href="#journal">Journal</a>
-    <a href="#about">About</a>
-  </nav>
+    <nav class="desktop-nav">
+      <a href="#collections">Collections</a>
+      <a href="#featured">Pieces</a>
+      <a href="#studio">Studio</a>
+      <a href="#journal">Journal</a>
+    </nav>
 
-  <div class="nav-actions">
-    <span>Search</span>
-    <span>Bag</span>
-  </div>
-</header>
+    <div class="nav-actions">
+      <button class="nav-link">Search</button>
+      <button class="nav-link">Bag</button>
+    </div>
+  </header>
 
-<main>
+  <main>
 
-  <section class="hero">
-    <div class="hero-text">
-      <p>ZYVRA STUDIO</p>
-      <h1>Designed with intention.</h1>
-      <span>Art, architecture and abstract design transformed into objects.</span>
-      <a href="#collections">Explore Collection →</a>
+    <section class="hero">
+      <div class="hero-copy reveal">
+        <p class="eyebrow">ZYVRA STUDIO</p>
+        <h1>Designed<br>with<br>intention.</h1>
+        <p class="hero-description">
+          Art, architecture and abstract design transformed into contemporary objects.
+        </p>
+        <a href="#collections" class="primary-btn">Explore Collection →</a>
+      </div>
+
+      <div class="hero-image reveal"></div>
+    </section>
+
+    <section class="statement reveal">
+      <p class="section-label">MANIFESTO</p>
+      <h2>Where art becomes identity.</h2>
+      <p>
+        ZYVRA creates products with a visual language inspired by brutalist architecture,
+        material texture and abstract experimentation.
+      </p>
+    </section>
+
+    <section id="collections" class="collections">
+      <div class="section-heading reveal">
+        <p class="section-label">01 / COLLECTIONS</p>
+        <h2>Current studies</h2>
+      </div>
+
+      <div class="collection-grid">
+        <article class="collection-card reveal">
+          <div class="collection-image chaos"></div>
+          <div class="collection-content">
+            <h3>CHAOS</h3>
+            <p>Texture, movement and contrast.</p>
+            <span>Explore →</span>
+          </div>
+        </article>
+
+        <article class="collection-card reveal">
+          <div class="collection-image void"></div>
+          <div class="collection-content">
+            <h3>VOID</h3>
+            <p>Silence, minimalism and form.</p>
+            <span>Explore →</span>
+          </div>
+        </article>
+
+        <article class="collection-card reveal">
+          <div class="collection-image monolith"></div>
+          <div class="collection-content">
+            <h3>MONOLITH</h3>
+            <p>Structure, weight and presence.</p>
+            <span>Explore →</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="featured" class="featured">
+      <div class="featured-image reveal"></div>
+
+      <div class="featured-info reveal">
+        <p class="section-label">FEATURED PIECE</p>
+        <h2>CHAOS DENIM 01</h2>
+        <span class="price">$2,490 MXN</span>
+        <p>
+          Denim intervenido con textura abstracta, contraste visual y dirección inspirada
+          en arquitectura brutalista.
+        </p>
+        <a href="#" class="primary-btn">View Piece →</a>
+      </div>
+    </section>
+
+    <section id="studio" class="studio reveal">
+      <p class="section-label">ZYVRA PROCESS</p>
+      <h2>Sketch. Material. Experiment. Collection.</h2>
+    </section>
+
+    <section id="journal" class="journal">
+      <div class="section-heading reveal">
+        <p class="section-label">02 / JOURNAL</p>
+        <h2>Notes from the studio</h2>
+      </div>
+
+      <div class="journal-grid">
+        <article class="journal-card reveal">
+          <p>Architecture</p>
+          <h3>Why concrete inspires us</h3>
+          <span>Read note →</span>
+        </article>
+
+        <article class="journal-card reveal">
+          <p>Process</p>
+          <h3>From sketch to garment</h3>
+          <span>Read note →</span>
+        </article>
+
+        <article class="journal-card reveal">
+          <p>Materials</p>
+          <h3>The language of texture</h3>
+          <span>Read note →</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="newsletter reveal">
+      <p class="section-label">NEWSLETTER</p>
+      <h2>Stay connected.</h2>
+
+      <form>
+        <input type="email" placeholder="Email address" />
+        <button type="submit">Subscribe →</button>
+      </form>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div>
+      <h2>ZYVRA</h2>
+      <p>Designed with intention.</p>
     </div>
 
-    <div class="hero-image"></div>
-  </section>
-
-  <section class="statement">
-    <h2>Where art becomes identity.</h2>
-    <p>
-      ZYVRA creates contemporary products inspired by brutalist architecture,
-      abstract expression and intentional design.
-    </p>
-  </section>
-
-  <section id="collections" class="collections">
-    <div class="section-title">
-      <p>01 / COLLECTIONS</p>
-      <h2>Current studies</h2>
+    <div class="footer-links">
+      <a href="#collections">Collections</a>
+      <a href="#studio">Studio</a>
+      <a href="#journal">Journal</a>
+      <a href="#">Instagram</a>
+      <a href="#">TikTok</a>
     </div>
+  </footer>
 
-    <div class="collection-grid">
-      <article>
-        <div class="collection-img img-one"></div>
-        <h3>CHAOS</h3>
-        <p>Texture, movement and contrast.</p>
-      </article>
-
-      <article>
-        <div class="collection-img img-two"></div>
-        <h3>VOID</h3>
-        <p>Silence, minimalism and form.</p>
-      </article>
-
-      <article>
-        <div class="collection-img img-three"></div>
-        <h3>MONOLITH</h3>
-        <p>Structure, weight and presence.</p>
-      </article>
-    </div>
-  </section>
-
-  <section id="studio" class="studio">
-    <p>ZYVRA PROCESS</p>
-    <h2>Sketch. Material. Experiment. Collection.</h2>
-  </section>
-
-</main>
-
-<footer>
-  <div>ZYVRA</div>
-  <p>Designed with intention.</p>
-</footer>
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
