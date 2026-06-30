@@ -1,306 +1,97 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap');
 
-:root {
-  --carbon: #171717;
-  --limestone: #EFEDE8;
-  --concrete: #D7D5CF;
-  --graphite: #555555;
-  --rust: #A45A3C;
+:root{
+  --carbon:#171717;
+  --limestone:#EFEDE8;
+  --concrete:#D7D5CF;
+  --graphite:#555555;
+  --rust:#A45A3C;
+  --white:#ffffff;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--limestone);color:var(--carbon);font-family:'Inter',sans-serif;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+button,input{font-family:inherit}
+
+.navbar{
+  position:fixed;top:0;left:0;width:100%;height:86px;padding:0 6%;
+  display:flex;align-items:center;justify-content:space-between;z-index:1000;
+  transition:.35s ease;
 }
+.navbar.scrolled{background:rgba(239,237,232,.92);backdrop-filter:blur(14px);box-shadow:0 12px 35px rgba(0,0,0,.06)}
+.logo{font-family:'Space Grotesk',sans-serif;font-size:28px;font-weight:700;letter-spacing:7px}
+.desktop-nav{display:flex;gap:42px}
+.desktop-nav a,.nav-actions button{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--carbon);background:none;border:0;cursor:pointer}
+.nav-actions{display:flex;gap:24px}
 
-html {
-  scroll-behavior: smooth;
-}
+.hero{min-height:100vh;padding:130px 6% 70px;display:grid;grid-template-columns:.85fr 1.15fr;gap:80px;align-items:center}
+.eyebrow,.section-label{font-size:12px;letter-spacing:5px;text-transform:uppercase;color:var(--graphite);margin-bottom:28px}
+.hero-copy h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(66px,9vw,130px);line-height:.88;letter-spacing:-6px;margin-bottom:34px}
+.hero-description{max-width:510px;font-size:18px;line-height:1.8;color:var(--graphite);margin-bottom:42px}
+.btn{display:inline-block;background:var(--carbon);color:var(--limestone);padding:14px 28px;text-transform:uppercase;font-size:12px;letter-spacing:2px;border-radius:3px;transition:.3s ease}
+.btn:hover{background:var(--rust);transform:translateY(-2px)}
+.hero-image{height:76vh;border-radius:4px;background:linear-gradient(rgba(0,0,0,.20),rgba(0,0,0,.20)),url('https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=1400&q=80');background-size:cover;background-position:center}
 
-body {
-  background: var(--limestone);
-  color: var(--carbon);
-  font-family: 'Inter', sans-serif;
-  overflow-x: hidden;
-}
+.manifesto{min-height:70vh;padding:120px 12%;display:flex;flex-direction:column;justify-content:center;background:var(--carbon);color:var(--limestone)}
+.manifesto h2{font-family:'Space Grotesk',sans-serif;font-size:clamp(48px,7vw,96px);line-height:1;max-width:940px;margin-bottom:38px;letter-spacing:-3px}
+.manifesto p:last-child{max-width:680px;font-size:19px;line-height:1.8;color:var(--concrete)}
 
-.navbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  height: 86px;
-  padding: 0 6%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 1000;
-  transition: 0.35s;
-}
+.collections{padding:120px 6%}
+.section-heading{margin-bottom:55px}
+.section-heading h2{font-family:'Space Grotesk',sans-serif;font-size:clamp(42px,5vw,64px);letter-spacing:-2px}
+.collection-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.collection-card{position:relative;min-height:620px;border-radius:4px;overflow:hidden;background:var(--carbon);cursor:pointer}
+.collection-image{position:absolute;inset:0;background-size:cover;background-position:center;transition:.65s ease;filter:grayscale(.2)}
+.collection-card:hover .collection-image{transform:scale(1.055);filter:grayscale(1)}
+.collection-card::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.78),rgba(0,0,0,.06))}
+.collection-content{position:absolute;left:28px;right:28px;bottom:28px;z-index:2;color:var(--limestone)}
+.collection-content h3{font-family:'Space Grotesk',sans-serif;font-size:36px;letter-spacing:4px;margin-bottom:8px}
+.collection-content p{color:var(--concrete);margin-bottom:22px}
+.collection-content span{font-size:12px;letter-spacing:2px;text-transform:uppercase}
+.chaos{background-image:url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80')}
+.void{background-image:url('https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=900&q=80')}
+.monolith{background-image:url('https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=900&q=80')}
 
-.logo {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 28px;
-  font-weight: 700;
-  letter-spacing: 7px;
-}
+.featured{padding:120px 6%;display:grid;grid-template-columns:1.1fr .9fr;gap:70px;align-items:center;background:var(--limestone)}
+.featured-image{height:720px;border-radius:4px;background:linear-gradient(rgba(0,0,0,.16),rgba(0,0,0,.16)),url('https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1200&q=80');background-size:cover;background-position:center}
+.featured-info h2{font-family:'Space Grotesk',sans-serif;font-size:clamp(46px,6vw,86px);line-height:.95;letter-spacing:-3px;margin-bottom:24px}
+.price{display:block;font-size:20px;margin-bottom:28px}
+.featured-info p:not(.section-label){max-width:540px;font-size:18px;line-height:1.8;color:var(--graphite);margin-bottom:38px}
 
-nav {
-  display: flex;
-  gap: 42px;
-}
+.studio{padding:150px 10%;background:var(--concrete)}
+.studio h2{font-family:'Space Grotesk',sans-serif;font-size:clamp(48px,7vw,100px);line-height:1;letter-spacing:-4px;max-width:1100px}
 
-nav a,
-.nav-actions span {
-  color: var(--carbon);
-  text-decoration: none;
-  text-transform: uppercase;
-  font-size: 13px;
-  letter-spacing: 2px;
-}
+.journal{padding:120px 6%;background:var(--carbon);color:var(--limestone)}
+.journal .section-label{color:var(--concrete)}
+.journal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.journal-card{min-height:280px;border:1px solid rgba(239,237,232,.18);padding:32px;display:flex;flex-direction:column;justify-content:space-between;transition:.3s ease}
+.journal-card:hover{background:rgba(239,237,232,.06);transform:translateY(-4px)}
+.journal-card p{color:var(--concrete);font-size:13px;letter-spacing:3px;text-transform:uppercase}
+.journal-card h3{font-family:'Space Grotesk',sans-serif;font-size:34px;line-height:1.05;letter-spacing:-1px}
+.journal-card span{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--concrete)}
 
-.nav-actions {
-  display: flex;
-  gap: 24px;
-}
+.newsletter{padding:120px 6%;background:var(--limestone)}
+.newsletter h2{font-family:'Space Grotesk',sans-serif;font-size:clamp(44px,6vw,82px);letter-spacing:-3px;margin-bottom:32px}
+.newsletter form{display:flex;max-width:680px;border-bottom:1px solid var(--carbon)}
+.newsletter input{flex:1;background:none;border:0;padding:18px 0;font-size:18px;outline:none;color:var(--carbon)}
+.newsletter button{background:none;border:0;font-size:12px;letter-spacing:2px;text-transform:uppercase;cursor:pointer;color:var(--carbon)}
 
-.hero {
-  min-height: 100vh;
-  padding: 120px 6% 70px;
-  display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
-  gap: 70px;
-  align-items: center;
-}
+.footer{padding:80px 6%;background:var(--carbon);color:var(--limestone);display:flex;justify-content:space-between;gap:40px}
+.footer h2{font-family:'Space Grotesk',sans-serif;font-size:32px;letter-spacing:8px;margin-bottom:14px}
+.footer p{color:var(--concrete)}
+.footer-links{display:flex;gap:26px;flex-wrap:wrap;align-items:flex-start}
+.footer-links a{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--concrete)}
+.footer-links a:hover{color:var(--limestone)}
 
-.hero-text p {
-  font-size: 13px;
-  letter-spacing: 5px;
-  color: var(--graphite);
-  margin-bottom: 28px;
-}
+.reveal{opacity:0;transform:translateY(34px);transition:opacity .9s ease,transform .9s ease}
+.reveal.active{opacity:1;transform:translateY(0)}
 
-.hero-text h1 {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: clamp(60px, 8vw, 118px);
-  line-height: 0.9;
-  letter-spacing: -5px;
-  margin-bottom: 32px;
-}
-
-.hero-text span {
-  display: block;
-  max-width: 520px;
-  color: var(--graphite);
-  font-size: 18px;
-  line-height: 1.8;
-  margin-bottom: 44px;
-}
-
-.hero-text a {
-  display: inline-block;
-  background: var(--carbon);
-  color: var(--limestone);
-  text-decoration: none;
-  padding: 17px 32px;
-  text-transform: uppercase;
-  font-size: 13px;
-  letter-spacing: 2px;
-  border-radius: 4px;
-  transition: 0.3s;
-}
-
-.hero-text a:hover {
-  background: var(--rust);
-  transform: translateY(-2px);
-}
-
-.hero-image {
-  height: 78vh;
-  border-radius: 6px;
-  background:
-    linear-gradient(rgba(0,0,0,.15), rgba(0,0,0,.15)),
-    url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1400&q=80");
-  background-size: cover;
-  background-position: center;
-}
-
-.statement {
-  min-height: 70vh;
-  padding: 120px 12%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background: var(--carbon);
-  color: var(--limestone);
-}
-
-.statement h2 {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: clamp(48px, 7vw, 96px);
-  line-height: 1;
-  max-width: 900px;
-  margin-bottom: 40px;
-}
-
-.statement p {
-  max-width: 620px;
-  font-size: 19px;
-  line-height: 1.8;
-  color: var(--concrete);
-}
-
-.collections {
-  padding: 120px 6%;
-}
-
-.section-title {
-  margin-bottom: 55px;
-}
-
-.section-title p {
-  font-size: 13px;
-  letter-spacing: 4px;
-  color: var(--graphite);
-  margin-bottom: 16px;
-}
-
-.section-title h2 {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 56px;
-  letter-spacing: -2px;
-}
-
-.collection-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
-}
-
-.collection-grid article {
-  cursor: pointer;
-}
-
-.collection-img {
-  height: 520px;
-  border-radius: 6px;
-  margin-bottom: 22px;
-  background-size: cover;
-  background-position: center;
-  transition: 0.4s;
-}
-
-.collection-grid article:hover .collection-img {
-  transform: scale(0.98);
-  filter: grayscale(1);
-}
-
-.img-one {
-  background-image: url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80");
-}
-
-.img-two {
-  background-image: url("https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=900&q=80");
-}
-
-.img-three {
-  background-image: url("https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=900&q=80");
-}
-
-.collection-grid h3 {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 30px;
-  letter-spacing: 3px;
-}
-
-.collection-grid p {
-  color: var(--graphite);
-  margin-top: 8px;
-}
-
-.studio {
-  padding: 150px 10%;
-  background: var(--concrete);
-}
-
-.studio p {
-  font-size: 13px;
-  letter-spacing: 5px;
-  color: var(--graphite);
-  margin-bottom: 28px;
-}
-
-.studio h2 {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: clamp(48px, 7vw, 100px);
-  line-height: 1;
-  letter-spacing: -4px;
-  max-width: 1100px;
-}
-
-footer {
-  padding: 70px 6%;
-  background: var(--carbon);
-  color: var(--limestone);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-footer div {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 28px;
-  letter-spacing: 7px;
-}
-
-footer p {
-  color: var(--concrete);
-}
-
-@media (max-width: 900px) {
-  nav {
-    display: none;
-  }
-
-  .navbar {
-    height: 74px;
-  }
-
-  .logo {
-    font-size: 22px;
-  }
-
-  .hero {
-    grid-template-columns: 1fr;
-    padding: 100px 6% 50px;
-    gap: 38px;
-  }
-
-  .hero-image {
-    height: 55vh;
-    order: 1;
-  }
-
-  .hero-text {
-    order: 2;
-  }
-
-  .hero-text h1 {
-    font-size: 58px;
-    letter-spacing: -2px;
-  }
-
-  .collection-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .collection-img {
-    height: 440px;
-  }
-
-  footer {
-    flex-direction: column;
-    gap: 18px;
-    align-items: flex-start;
-  }
+@media(max-width:900px){
+  .desktop-nav{display:none}.navbar{height:74px}.logo{font-size:22px;letter-spacing:5px}.nav-actions{gap:16px}.nav-actions button{font-size:11px}
+  .hero{grid-template-columns:1fr;padding:100px 6% 50px;gap:36px}.hero-image{height:55vh;order:1}.hero-copy{order:2}.hero-copy h1{font-size:58px;letter-spacing:-2px}
+  .manifesto{padding:90px 7%}.collections,.featured,.journal,.newsletter{padding:80px 6%}
+  .collection-grid,.journal-grid,.featured{grid-template-columns:1fr}.collection-card{min-height:500px}.featured-image{height:520px}.studio{padding:100px 7%}
+  .newsletter form{display:block}.newsletter button{padding:18px 0}.footer{flex-direction:column}
 }

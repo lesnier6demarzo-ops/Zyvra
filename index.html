@@ -3,14 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <title>ZYVRA | Designed with intention</title>
-
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-  <header class="navbar">
+  <header class="navbar" id="navbar">
     <a href="#" class="logo">ZYVRA</a>
 
     <nav class="desktop-nav">
@@ -21,13 +18,12 @@
     </nav>
 
     <div class="nav-actions">
-      <button class="nav-link">Search</button>
-      <button class="nav-link">Bag</button>
+      <button>Search</button>
+      <button>Bag</button>
     </div>
   </header>
 
   <main>
-
     <section class="hero">
       <div class="hero-copy reveal">
         <p class="eyebrow">ZYVRA STUDIO</p>
@@ -35,13 +31,13 @@
         <p class="hero-description">
           Art, architecture and abstract design transformed into contemporary objects.
         </p>
-        <a href="#collections" class="primary-btn">Explore Collection →</a>
+        <a href="#collections" class="btn">Explore Collection →</a>
       </div>
 
       <div class="hero-image reveal"></div>
     </section>
 
-    <section class="statement reveal">
+    <section class="manifesto reveal">
       <p class="section-label">MANIFESTO</p>
       <h2>Where art becomes identity.</h2>
       <p>
@@ -88,7 +84,6 @@
 
     <section id="featured" class="featured">
       <div class="featured-image reveal"></div>
-
       <div class="featured-info reveal">
         <p class="section-label">FEATURED PIECE</p>
         <h2>CHAOS DENIM 01</h2>
@@ -97,7 +92,7 @@
           Denim intervenido con textura abstracta, contraste visual y dirección inspirada
           en arquitectura brutalista.
         </p>
-        <a href="#" class="primary-btn">View Piece →</a>
+        <a href="#" class="btn">View Piece →</a>
       </div>
     </section>
 
@@ -136,13 +131,11 @@
     <section class="newsletter reveal">
       <p class="section-label">NEWSLETTER</p>
       <h2>Stay connected.</h2>
-
-      <form>
-        <input type="email" placeholder="Email address" />
+      <form id="newsletterForm">
+        <input type="email" placeholder="Email address" required />
         <button type="submit">Subscribe →</button>
       </form>
     </section>
-
   </main>
 
   <footer class="footer">
@@ -150,7 +143,6 @@
       <h2>ZYVRA</h2>
       <p>Designed with intention.</p>
     </div>
-
     <div class="footer-links">
       <a href="#collections">Collections</a>
       <a href="#studio">Studio</a>

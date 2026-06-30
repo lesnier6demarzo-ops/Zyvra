@@ -1,35 +1,27 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const navbar = document.querySelector(".navbar");
+document.addEventListener('DOMContentLoaded', () => {
+  const navbar = document.getElementById('navbar');
 
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 50) {
-      navbar.style.background = "rgba(239, 237, 232, 0.92)";
-      navbar.style.backdropFilter = "blur(12px)";
-      navbar.style.boxShadow = "0 10px 30px rgba(0,0,0,0.06)";
-    } else {
-      navbar.style.background = "transparent";
-      navbar.style.backdropFilter = "none";
-      navbar.style.boxShadow = "none";
-    }
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 40);
   });
 
-  const items = document.querySelectorAll(".hero-text, .hero-image, .statement, .collections, .studio");
-
+  const revealElements = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        entry.target.style.opacity = "1";
-        entry.target.style.transform = "translateY(0)";
+        entry.target.classList.add('active');
       }
     });
-  }, {
-    threshold: 0.12
-  });
+  }, { threshold: 0.12 });
 
-  items.forEach(item => {
-    item.style.opacity = "0";
-    item.style.transform = "translateY(35px)";
-    item.style.transition = "all 0.9s ease";
-    observer.observe(item);
-  });
+  revealElements.forEach(el => observer.observe(el));
+
+  const form = document.getElementById('newsletterForm');
+  if (form) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      alert('Gracias por suscribirte a ZYVRA.');
+      form.reset();
+    });
+  }
 });
